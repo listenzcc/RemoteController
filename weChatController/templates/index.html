@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate"
+        />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <title>WeChat Remote</title>
+        <link
+            rel="stylesheet"
+            href="{% static 'css/default.css' %}"
+            type="text/css"
+        />
+        <script
+            type="text/javascript"
+            src="{% static 'js/d3.min.js' %}"
+        ></script>
+    </head>
+
+    <body>
+        <div>
+            <h2>WeChat Remote</h2>
+        </div>
+
+        <div>
+            <input type="text" placeholder="Message" id="text-1" />
+            <input type="button" value="Submit" onclick="sendMessage()" />
+        </div>
+
+        <script type="text/javascript">
+            function sendMessage() {
+                const message = document.getElementById("text-1").value;
+                console.log(message);
+                d3.json("submit/" + message).then(function (data) {
+                    console.log(data);
+                });
+            }
+        </script>
+    </body>
+</html>
