@@ -20,6 +20,11 @@ The Project will work as following
 
 ![How-to-Use](how-to-use.svg)
 
+The files are matlab examples of sending a message
+
+-   For Debug usage: [sendMessage/sendMessage.m](sendMessage/sendMessage.m)
+-   For Inline usage: [sendMessage/funMessage.m](sendMessage/funMessage.m)
+
 ## Socket Income Handler
 
 The Django server is established to handle the income from the **http socket connection**.
